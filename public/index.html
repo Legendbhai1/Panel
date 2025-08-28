@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Komi Ai</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <div class="brand">Komi Ai</div>
+        <button id="new-chat" class="primary">New chat</button>
+        <div class="suggestions" id="suggestions"></div>
+        <div class="divider"></div>
+        <div class="history" id="history"></div>
+        <div class="user-row">
+          <span id="user-label">Guest</span>
+          <button id="logout" class="ghost">Logout</button>
+        </div>
+      </aside>
+
+      <main class="chat">
+        <div id="messages" class="messages"></div>
+        <div class="composer">
+          <button id="mic" title="Voice input">🎤</button>
+          <input id="input" placeholder="Message Komi Ai..." />
+          <button id="send" class="primary">Send</button>
+          <button id="tts-toggle" title="Read replies">🔊</button>
+        </div>
+      </main>
+    </div>
+
+    <div id="login-overlay" class="overlay hidden">
+      <div class="dialog">
+        <h2>Welcome to Komi Ai</h2>
+        <p>Sign in with a name or continue as a guest.</p>
+        <label>Display name</label>
+        <input id="login-name" placeholder="Your name" />
+        <div class="row">
+          <button id="continue-guest" class="ghost">Continue as Guest</button>
+          <button id="continue-name" class="primary">Continue</button>
+        </div>
+        <p class="fineprint">Your chats are saved locally on this device.</p>
+      </div>
+    </div>
+
+    <template id="message-template">
+      <div class="message">
+        <div class="bubble"></div>
+        <div class="actions">
+          <button class="copy" title="Copy">Copy</button>
+          <button class="up" title="Helpful">👍</button>
+          <button class="down" title="Not helpful">👎</button>
+        </div>
+      </div>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+  </html>
+
